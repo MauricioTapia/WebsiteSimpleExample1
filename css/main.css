@@ -1,0 +1,20 @@
+/*reseteando estilos del navegador*/
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: decker;
+}
+
+
+body{
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+
+.contenedor{
+  width: 100%;
+  
+}

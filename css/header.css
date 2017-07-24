@@ -1,0 +1,39 @@
+/* customizando el header */
+.contenedor header{
+  width: 100%; /* que tome todo el ancho del dispositivo */
+  height: 150px; /* con 150px de altura */
+  background: rgba(0, 77, 226, 0.58);/* con el siguiente color */
+
+  display: flex;  /* combertilo en caja flexible padre */
+  justify-content: space-between; /* distribuir su contenido dejando mucho espacio entre cada contenido */
+  align-items: center; /* alineado el contenido al centro con respecto al eje Y */
+  padding-right: 10px; /* dandole un espaciado estetico para que el ultimo elemento no este pegado a la linea final */
+}
+
+/*customizacion del contenedor de la imagen y de la imagen misma*/
+.contenedor header .Logo { /* este div contiene a la imagen */
+  /*width: 150px;*/
+  /*height: 150px;*/
+}
+
+.contenedor header .Logo img{ /* esta es la imagen */
+  border-radius: 50%; /* recortando circularmente la imagen */
+}
+
+/*customizando el texto "JM Corporations" que esta en el h1*/
+.contenedor header h1 {
+  color: #fff;
+}
+
+/*customizando el media queri para este tamaño de dispositivos de menos de 405px de ancho*/
+@media (max-width:405px) {
+  .contenedor header {
+    height: auto; /* poner el ancho en automatico para que se adapte a los cambios que tome el header */
+    flex-direction: column; /* cambiar la direccion de distribucion de los hijos, ahora que se distribuyan como columan */
+    align-content: center; /* alinear a los hijos al centro con respecto al eje X del padre */
+  }
+
+  .contenedor header .Logo {
+    margin-top: 2px; /* solo por estetica le aumente 2px por encima al logo */
+  }
+}

@@ -1,0 +1,80 @@
+/*.barra menu = header*/
+
+
+
+.contenedor .barramenu{
+  width: 100%; /* que el header padre tome todo el ancho del dispositivo */
+  background: #4e94ab; /* con este color */
+}
+
+.contenedor .barramenu #btn-menu {
+  display: none;  /* ocultamos el checkbox ya que no lo nesecitamos visible */
+}
+
+.barramenu label { /* este es el Label "Menu" */
+  color: #fff; /* color de texto blanco */
+  width: 70px; /* ancho 70px */
+  display: none; /* ocultar el boton para pantallas grandes*/
+  padding: 10px; /* con este esspaciado interno */
+  border-right: 1px solid #fff; /* linea vertical estetica */
+}
+
+.barramenu label:hover{
+  cursor: pointer;  /* que el cursor cambie al pasar el mouse */
+  background: rgba(0, 0, 0, 0.81); /* a este color */
+}
+
+/*el menu*/
+
+
+.menu ul {
+  list-style: none; /* quitando los puntos de las listas */
+  display: flex; /* combertilo en caja flexible padre */
+}
+
+.menu ul li {
+  text-align: center; /* que cada texto detro de cada li se alinee al centro con respecto al eje X */
+  flex-grow: 1; /* que cada li se distribuya uniformemente deentro del ul  */
+  border-right: 1px solid #fff;
+}
+.menu ul li:hover {
+  background: rgba(0, 0, 0, 0.51);  /*cambiar el color de los botones al pasar el mouse */
+}
+.menu li a{
+  display: block;  /* */
+  padding: 15px 20px;  /* tamaño de los enlaces */
+  color: #fff;  /* el color de los enlaces */
+  text-decoration: none; /* quitando el subrayado de los enlaces */
+}
+
+
+/*el media queri*/
+
+@media (max-width:768px){
+  .barramenu label{
+    display: block; /* aqui tenemos que mostrar el boton menu */
+  }
+
+  .menu {
+    position: absolute; /*esta propiedad sacara el menu de la maquetacion*/
+    background:#4e94ab; /* luego le damos el mismo color */
+    width: 70%; /* dando un tamaño a cada li */
+    margin-left: -70%; /* ocultar el menu, pues tras presionar el boton menu este lo mostrara */
+
+    transition: all 1s; /* esta propiedad va luego de configurar el checkbox mas abajo, solo es una transision para mostrar el menu */
+  }
+
+  .menu ul{
+    flex-direction: column; /* cambiar la distribucion de los li, por defecto estaba en "row" ahora lo nesecito en modo columna */
+  }
+
+  .menu ul li {
+    border-top: 1px solid #fff; /* poner lineas separatorias a cada li */
+  }
+
+  #btn-menu:checked ~ .menu {
+    margin: 0px;
+  }
+
+
+}
